@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 const CardMovie = ({ movie }) => {
     const { id, title, director, genre, release_year, image } = movie;
@@ -14,7 +14,7 @@ const CardMovie = ({ movie }) => {
                 <li className="list-group-item">{genre},{release_year}</li>
             </ul>
             <div className="card-body">
-                <button className="btn btn-dark">Review</button>
+                <Link to={`movies/${id}`} className="btn btn-dark">Review</Link>
             </div>
         </div>
 
