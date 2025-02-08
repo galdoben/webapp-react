@@ -6,18 +6,21 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
 
     const api_url = import.meta.env.VITE_API_URL;
+    const [movies, setMovies] = useState([]);
+
 
     const fetchMovies = () => {
         axios.get(api_url)
             .then(res => {
                 console.log(res.data);
+                setMovies(res.data)
 
             })
 
     }
 
 
-    const value = { fetchMovies }
+    const value = { fetchMovies, movies }
 
     return (
         <GlobalContext.Provider value={value}>

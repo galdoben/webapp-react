@@ -1,0 +1,10 @@
+.movie-image {
+    aspect-ratio: 9/16;
+    object-fit: cover;
+
+}
+
+.card {
+    width: 330px;
+    margin: 20px;
+}
