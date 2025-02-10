@@ -1,7 +1,7 @@
 import { useGlobalContext } from '../context/GlobalContext' //hook
 import { useEffect } from 'react'
 import CardMovie from '../components/CardMovie'
-
+import FormReview from '../components/FormReview'
 
 const HomePage = () => {
     const { fetchMovies, movies } = useGlobalContext()
@@ -26,6 +26,8 @@ const HomePage = () => {
             </div>
 
         </>
+
+
     )
 }
 
