@@ -1,12 +1,21 @@
 import { useParams } from "react-router-dom"
 import { useGlobalContext } from "../context/GlobalContext";
 import { useEffect } from "react";
+import ReviewCard from "../components/ReviewCard";
 import FormReview from "../components/FormReview";
 
 const ReviewsMovie = () => {
 
     const { id } = useParams();
     const { movie, fetchMovie } = useGlobalContext()
+
+    const renderReviews = () => {
+        if (movie && Array.isArray(movie.reviews) && movie.reviews.length > 0) {
+            return movie.reviews.map((review) => (
+                <ReviewCard key={review.id} review={review} />
+            ));
+        }
+    }
 
     useEffect(() => {
         fetchMovie(id);
@@ -28,10 +37,14 @@ const ReviewsMovie = () => {
                 </div>
 
                 <ul className="list-group list-group-flush">
-                    <address><i> By {movie?.director}</i></address>
-                    <li className="list-group-item">{movie?.genre},{movie?.release_year}</li>
+                    <address><i> By {movie.director}</i></address>
+                    <li className="list-group-item">{movie.genre},{movie.release_year}</li>
                 </ul>
             </div>
+            <section>
+                {renderReviews()}
+            </section>
+
             <section>
                 <FormReview movie_id={movie?.id} />
             </section>
