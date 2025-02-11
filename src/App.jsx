@@ -3,7 +3,7 @@ import DefLayout from './assets/layouts/DefLayout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalProvider } from './context/GlobalContext';
 import ReviewsMovie from './pages/ReviewsMovie';
-
+import AddMovie from './pages/AddMovie';
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
           <Route element={<DefLayout />}>
             <Route path='/' element={<HomePage />} />
             <Route path='/movies/:id' element={<ReviewsMovie />} />
+            <Route path='/movie/add' element={<AddMovie />} />
           </Route>
         </Routes>
       </BrowserRouter>

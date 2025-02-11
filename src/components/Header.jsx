@@ -9,6 +9,9 @@ const Header = () => {
                         <img src="https://img.icons8.com/?size=100&id=11139&format=png&color=000000" alt="Logo" width="60" height="54" className="d-inline-block align-text-top" />
                         MovieLand
                     </Link>
+                    <Link className="btn btn-warning" to="/movie/add">
+                        Aggiungi Film
+                    </Link>
                 </div>
             </nav>
 
